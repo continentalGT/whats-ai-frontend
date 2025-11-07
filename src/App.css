@@ -1,38 +1,232 @@
-.App {
-  text-align: center;
-}
+/* src/App.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* 
+===========================
+  GLOBAL LAYOUT STYLING
+===========================
+*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Main container spans full viewport height */
+.app-container {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f6fa; /* ⬅️ Softer background tone */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222; /* Better text contrast */
+}
+
+/* 
+===========================
+  MAIN CONTENT AREA
+===========================
+*/
+
+/* Allows main content to expand and center nicely */
+.main-content {
+  flex: 1;
+  padding: 3rem 2rem; /* ⬅️ Increased padding for cleaner spacing */
+  text-align: center;
+  background: linear-gradient(to bottom right, #f4ecf7, #ede7f6); /* ⬅️ Subtle gradient */
+  border-radius: 12px; /* ⬅️ Smooth corners */
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1000px;
+}
+
+/* Headings inside main section */
+.main-content h2 {
+  font-size: 2.2rem;
+  color: #4B0082; /* ⬅️ Match footer/nav color */
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs in main content */
+.main-content p {
+  color: #444;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* 
+===========================
+  NAVBAR LINKS (Optional Enhancement)
+===========================
+*/
+
+/* 
+===========================
+  NAVBAR STYLING
+===========================
+*/
+
+.navbar {
+  background-color: purple;
+  padding: 1rem;
+  display: flex;
+  justify-content: center; /* ✅ centers the whole navbar */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* The UL list inside navbar */
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem; /* ✅ spacing between items */
+}
+
+/* Links inside the navbar */
+.nav-list a {
   color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+/* Hover effect (you already had this, now applied properly) */
+.nav-list a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* 
+===========================
+  FOOTER STYLING
+===========================
+*/
+
+.footer {
+  background-color: #4B0082;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto; /* Keeps footer pinned to bottom */
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* ⬅️ Soft shadow for depth */
+}
+
+/* Make footer text a bit lighter on hover (nice touch) */
+.footer p:hover {
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+
+
+
+
+/* 
+===========================
+  WORKLOAD CARD STYLING
+===========================
+*/
+
+.workload-card {
+  border: 2px solid #4B0082;         /* Purple border */
+  border-radius: 10px;               /* Rounded corners */
+  padding: 1rem 1.5rem;              /* Inner space */
+  margin: 1rem auto;                 /* Space between cards */
+  width: 80%;                        /* Keep consistent width */
+  max-width: 600px;                  /* Prevent overexpansion */
+  background-color: #f8f6fa;         /* Light background */
+  text-align: center;
+  transition: all 0.3s ease;         /* Smooth hover transition */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Soft shadow */
+}
+
+/* Hover effect for interaction */
+.workload-card:hover {
+  background-color: #dda3e9;         /* Dark purple fill */
+  color: white;                      /* Text turns white */
+  transform: scale(1.03);            /* Slight zoom */
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Shadow pops more */
+}
+
+/* Heading style inside card */
+.workload-card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+
+/* 
+=========================================
+ RESPONSIVE DESIGN — Whats-AI.ai
+=========================================
+*/
+
+/* Tablets (screen width ≤ 992px) */
+@media (max-width: 992px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .workload-card {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Mobiles (screen width ≤ 600px) */
+@media (max-width: 600px) {
+  /* Header text smaller and centered */
+  h1, h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .workload-card {
+    width: 95%;
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .buy-btn {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 0.8rem;
   }
 }
