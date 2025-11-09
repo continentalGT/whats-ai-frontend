@@ -10,6 +10,8 @@ import { Route, Switch } from "react-router-dom";
 // These are the routerpages
 import NLP from "../pages/NLP";
 import ComputerVision from "../pages/ComputerVision";
+import NLPDemo from "../pages/NLPDemo";
+
 
 
 
@@ -36,11 +38,16 @@ function App() {
             <div>
               {work.map(CreateWorkload)}
             </div>
+            
+
           </Route>
 
           {/* ✅ NLP route */}
           <Route path="/nlp" component={NLP} />
           <Route path="/computer-vision" component={ComputerVision} />
+          <Route path="/nlp-demo" component={NLPDemo} />
+          <Route path="/computer-vision" component={ComputerVision} />
+
 
         </Switch>
       </main>

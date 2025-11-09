@@ -11,8 +11,6 @@ function Navbar() {
         <li><a href="#">Blog</a></li>
         <li><a href="#">Shop</a></li>
         <li><a href="#">About</a></li>
-
-
       </ul>
     </nav>
   );
